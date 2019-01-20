@@ -53,10 +53,7 @@ module.exports = {
   */
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: 'https://graphql.datocms.com',
-        getAuth: () => process.env.APOLLO_API_KEY
-      }
+      default: '~/apollo/config.js'
     }
   },
   /*
