@@ -1,6 +1,5 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 const pkg = require('./package');
-require('dotenv').config();
 
 module.exports = {
   mode: 'universal',
@@ -81,6 +80,7 @@ module.exports = {
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
+        config.node = { fs: 'empty' };
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
