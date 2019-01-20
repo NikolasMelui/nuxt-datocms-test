@@ -1,6 +1,6 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
-
 const pkg = require('./package');
+require('dotenv').config();
 
 module.exports = {
   mode: 'universal',
@@ -55,7 +55,7 @@ module.exports = {
     clientConfigs: {
       default: {
         httpEndpoint: 'https://graphql.datocms.com',
-        getAuth: () => ''
+        getAuth: () => process.env.APOLLO_API_KEY
       }
     }
   },
