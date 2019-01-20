@@ -2,7 +2,9 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
-        <li v-for="(post, index) in allPosts" :key="index">{{ post.title }}</li>
+        <li v-for="(post, index) in allPosts" :key="index">
+          <nuxt-link :to="`/blog/${post.slug}`">{{ post.title }}</nuxt-link>
+        </li>
       </div>
     </v-flex>
   </v-layout>
@@ -18,6 +20,7 @@ export default {
         allPosts {
           title
           description
+          slug
         }
       }
     `
